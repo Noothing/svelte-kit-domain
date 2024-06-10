@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "Test front-end",
-      script: 'npm run dev',
+      script: 'npm run preview',
     }
   ]
 };
