@@ -1,5 +1,7 @@
-/** @type {import('./$types').LayoutServerLoad} */
-export async function load() {
+export const ssr = false
+
+export const load = async ({url}) => {
+    console.log(url)
     fetch('https://api.noothing.xyz/me', {
         method: 'GET',
         headers: {
@@ -8,7 +10,7 @@ export async function load() {
         },
         credentials: 'include' // Include cookies with the request
     })
-        .then(response => response.json())
+        .then(response => response.text())
         .then(data => {
             console.log('Success:', data);
         })
