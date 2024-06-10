@@ -1,11 +1,12 @@
 /** @type {import('./$types').LayoutServerLoad} */
 export async function load() {
     fetch('https://api.noothing.xyz/me', {
-        method: 'GET', // or 'POST' if the route requires a POST request
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Add this line if the request requires authorization
-        }
+            // Include any necessary headers here, such as authorization if needed
+        },
+        credentials: 'include' // Include cookies with the request
     })
         .then(response => response.json())
         .then(data => {
